@@ -1,0 +1,109 @@
+package it.univaq.disim.mwt;
+
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class XmlDealer {
+
+    public static void out(String nonFormattedXml) {
+        try {
+            xmlParser(nonFormattedXml);
+
+        } catch (SAXException | IOException | ParserConfigurationException | TransformerException ex) {
+            Logger.getLogger(XmlDealer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static String getContent(String xmlResponse) {
+        String xmlString = null;
+
+        try {
+            // converting to xml to object (document)
+            Document body = getContentDocument(xmlResponse);
+
+            // return row xml (formatted string xml)
+            TransformerFactory transfac = TransformerFactory.newInstance();
+            Transformer trans = transfac.newTransformer();
+            trans.setOutputProperty(OutputKeys.METHOD, "xml");
+            trans.setOutputProperty(OutputKeys.INDENT, "yes");
+            trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", Integer.toString(2));
+
+            StringWriter sw = new StringWriter();
+            StreamResult result = new StreamResult(sw);
+            DOMSource source = new DOMSource(body.getElementsByTagName("DataSet").item(0));
+
+            trans.transform(source, result);
+
+            xmlString = sw.toString();
+
+        } catch(TransformerException ex){
+            Logger.getLogger(XmlDealer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return xmlString;
+    }
+
+    private static Document getContentDocument(String xmlResponse) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+
+            InputSource is = new InputSource(new StringReader(xmlResponse));
+            is.setEncoding("UTF-8");
+            Document document = builder.parse(is);
+
+            String node = getResponseBody(document.getElementsByTagName("ns1:fn_retrieve_xml_pResponse").item(0).getTextContent());
+
+            return builder.parse(new InputSource(new StringReader(node)));
+
+        } catch (ParserConfigurationException | SAXException | IOException ex) {
+            Logger.getLogger(XmlDealer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    private static String getResponseBody(String xmlResponse) throws ParserConfigurationException, SAXException, IOException {
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        InputSource is = new InputSource(new StringReader(xmlResponse));
+        is.setEncoding("Windows-1252");
+        Document document = builder.parse(is);
+        OutputFormat format = new OutputFormat(document, "Windows-1252", true);
+        Writer out = new StringWriter();
+        XMLSerializer serializer = new XMLSerializer(out, format);
+        serializer.serialize(document);
+        String result = out.toString();
+
+        return result;
+    }
+
+    private static void xmlParser(String nonFormattedXml) throws SAXException, IOException, ParserConfigurationException, TransformerConfigurationException, TransformerException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(new InputSource(new StringReader(nonFormattedXml)));
+
+        Transformer tform = TransformerFactory.newInstance().newTransformer();
+        tform.setOutputProperty(OutputKeys.INDENT, "yes");
+        tform.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        tform.transform(new DOMSource(document), new StreamResult(System.out));
+
+    }
+}
