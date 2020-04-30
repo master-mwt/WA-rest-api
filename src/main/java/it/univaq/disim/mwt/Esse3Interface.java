@@ -8,12 +8,9 @@ import java.util.Map;
 // TODO: hardcoded parameters
 public class Esse3Interface {
 
-    public static AnnoAccademicoList annoAccademicoCorrente() {
-        Map<String, String> inputParameters = new HashMap<String, String>();
-
+    public static AnnoAccademicoList annoAccademicoCorrente(Map<String, String> inputParameters) {
         // OP: ANNO_ACCADEMICO_CORRENTE
         String opcode = "GET_CURR_AA";
-        inputParameters.put("tipo_data_rif_cod", "DR_CALESA");
 
         String response = Esse3SoapRequest.request(opcode, inputParameters);
         String xmlString = XmlDealer.getContent(response);
