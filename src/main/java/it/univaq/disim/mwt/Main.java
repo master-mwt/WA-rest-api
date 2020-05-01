@@ -8,9 +8,9 @@ import it.univaq.disim.mwt.model.AnnoAccademicoList;
 public class Main {
     public static void main(String[] args) throws JsonProcessingException {
 
-        AnnoAccademicoList annoAccademicoList = Esse3Interface.elencoAnniAccademici();
+        //AnnoAccademicoList annoAccademicoList = Esse3Interface.elencoAnniAccademici();
 
-        System.out.println("annoAccademicoList length: " + annoAccademicoList.getAnnoAccademicoList().size());
+        /*System.out.println("annoAccademicoList length: " + annoAccademicoList.getAnnoAccademicoList().size());
         System.out.println("--------------------------------");
         for (AnnoAccademico ac: annoAccademicoList.getAnnoAccademicoList()) {
             System.out.println("id: " + ac.getAa_id());
@@ -18,12 +18,12 @@ public class Main {
             System.out.println("data_fine: " + ac.getData_fine());
             System.out.println("des: " + ac.getDes());
             System.out.println("--------------------------------");
-        }
+        }*/
 
         //Creating the ObjectMapper object
-        ObjectMapper mapper = new ObjectMapper();
+        //ObjectMapper mapper = new ObjectMapper();
         //Converting the Object to JSONString
-        String jsonString = mapper.writeValueAsString(annoAccademicoList);
-        System.out.println(jsonString);
+        //String jsonString = mapper.writeValueAsString(annoAccademicoList);
+        //System.out.println(jsonString);
     }
 }

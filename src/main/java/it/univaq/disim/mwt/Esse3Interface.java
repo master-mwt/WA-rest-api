@@ -18,12 +18,9 @@ public class Esse3Interface {
         return JAXBDealer.<AnnoAccademicoList>unMarshall(AnnoAccademicoList.class, xmlString);
     }
 
-    public static AnnoAccademicoList elencoAnniAccademici() {
-        Map<String, String> inputParameters = new HashMap<String, String>();
-
+    public static AnnoAccademicoList elencoAnniAccademici(Map<String, String> inputParameters) {
         // OP: ELENCO_ANNI_ACCADEMICI
         String opcode = "AA_LOOKUP";
-        inputParameters.put("aa_ini_id", "2005");
 
         String response = Esse3SoapRequest.request(opcode, inputParameters);
         String xmlString = XmlDealer.getContent(response);
