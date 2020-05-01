@@ -2,13 +2,11 @@ package it.univaq.disim.mwt;
 
 import it.univaq.disim.mwt.model.AnnoAccademicoList;
 
-import java.util.HashMap;
 import java.util.Map;
 
-// TODO: hardcoded parameters
 public class Esse3Interface {
 
-    public static AnnoAccademicoList annoAccademicoCorrente(Map<String, String> inputParameters) {
+    public static AnnoAccademicoList annoAccademicoCorrente(Map<String, String> inputParameters) throws AppException {
         // OP: ANNO_ACCADEMICO_CORRENTE
         String opcode = "GET_CURR_AA";
 
@@ -18,7 +16,7 @@ public class Esse3Interface {
         return JAXBDealer.<AnnoAccademicoList>unMarshall(AnnoAccademicoList.class, xmlString);
     }
 
-    public static AnnoAccademicoList elencoAnniAccademici(Map<String, String> inputParameters) {
+    public static AnnoAccademicoList elencoAnniAccademici(Map<String, String> inputParameters) throws AppException {
         // OP: ELENCO_ANNI_ACCADEMICI
         String opcode = "AA_LOOKUP";
 

@@ -1,17 +1,16 @@
 package it.univaq.disim.mwt;
 
-import java.io.ByteArrayInputStream;
-import java.io.UnsupportedEncodingException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.xml.sax.InputSource;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import org.xml.sax.InputSource;
+import java.io.ByteArrayInputStream;
+import java.io.UnsupportedEncodingException;
 
 public class JAXBDealer {
     
-    public static <T> T unMarshall(Class classType, String xml){
+    public static <T> T unMarshall(Class classType, String xml) throws AppException {
         
         T result = null;
         
@@ -19,7 +18,7 @@ public class JAXBDealer {
             result = unMarshallAux(classType, xml);
             
         } catch (JAXBException | UnsupportedEncodingException ex) {
-            Logger.getLogger(JAXBDealer.class.getName()).log(Level.SEVERE, null, ex);
+            throw new AppException(ex);
         }
         
         return result;

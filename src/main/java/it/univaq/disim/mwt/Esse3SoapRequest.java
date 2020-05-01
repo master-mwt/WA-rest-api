@@ -12,11 +12,11 @@ public class Esse3SoapRequest {
 
     private final static String URL = "https://segreteriavirtuale.univaq.it/services/ESSE3WS";
 
-    public static String request(String opcode, Map<String, String> inputParameters) {
+    public static String request(String opcode, Map<String, String> inputParameters) throws AppException {
         return soapRequest(URL, opcode, MapToString(inputParameters));
     }
 
-    private static String soapRequest(String urlString, String opcode, String inputParameters) {
+    private static String soapRequest(String urlString, String opcode, String inputParameters) throws AppException {
 
         HttpURLConnection con = null;
         String result = null;
@@ -67,11 +67,11 @@ public class Esse3SoapRequest {
 
                 result = response.toString();
             } else {
-                result = "HTTP Error: " + responseCode;
+                throw new AppException("HTTP Error: " + responseCode);
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new AppException(e);
         } finally {
             if (con != null) {
                 con.disconnect();

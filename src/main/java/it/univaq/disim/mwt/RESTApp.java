@@ -1,7 +1,6 @@
 package it.univaq.disim.mwt;
 
 import it.univaq.disim.mwt.resources.AnnoAccademicoCorrenteRes;
-import it.univaq.disim.mwt.resources.DummyRes;
 import it.univaq.disim.mwt.resources.ElencoAnniAccademiciRes;
 
 import javax.ws.rs.ApplicationPath;
@@ -18,7 +17,6 @@ public class RESTApp extends Application {
     public RESTApp() {
         HashSet<Class<?>> c = new HashSet<Class<?>>();
 
-        c.add(DummyRes.class);
         c.add(AnnoAccademicoCorrenteRes.class);
         c.add(ElencoAnniAccademiciRes.class);
 

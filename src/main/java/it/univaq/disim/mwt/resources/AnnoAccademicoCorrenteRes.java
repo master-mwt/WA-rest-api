@@ -1,7 +1,9 @@
 package it.univaq.disim.mwt.resources;
 
+import it.univaq.disim.mwt.AppException;
 import it.univaq.disim.mwt.Esse3Interface;
 import it.univaq.disim.mwt.JSONDealer;
+import it.univaq.disim.mwt.RestWebApplicationException;
 import it.univaq.disim.mwt.model.AnnoAccademicoList;
 
 import javax.ws.rs.*;
@@ -24,8 +26,13 @@ public class AnnoAccademicoCorrenteRes {
             inputParameters.put("tipo_corso_cod", tipo_corso_cod);
         }
 
-        AnnoAccademicoList annoAccademicoList = Esse3Interface.annoAccademicoCorrente(inputParameters);
+        try {
+            AnnoAccademicoList annoAccademicoList = Esse3Interface.annoAccademicoCorrente(inputParameters);
 
-        return Response.ok(JSONDealer.toJSON(annoAccademicoList)).build();
+            return Response.ok(JSONDealer.toJSON(annoAccademicoList)).build();
+
+        } catch(AppException e){
+            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Internal Server Error");
+        }
     }
 }
