@@ -8,8 +8,8 @@ import it.univaq.disim.mwt.model.lists.ClasseMiurList;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.HashMap;
@@ -19,14 +19,16 @@ import java.util.Map;
 public class ClassiRes {
 
     @GET
-    @Path("{cla_m_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getClassi(@PathParam("cla_m_id") int cla_m_id) {
+    public Response getClassi(@QueryParam("cla_m_id") int cla_m_id) {
         Map<String, String> inputParameters = new HashMap<String, String>();
-        inputParameters.put("cla_m_id", String.valueOf(cla_m_id));
+
+        if(cla_m_id != 0){
+            inputParameters.put("cla_m_id", String.valueOf(cla_m_id));
+        }
 
         try {
-            ClasseMiurList classeMiurList = Esse3Interface.Classi(inputParameters);
+            ClasseMiurList classeMiurList = Esse3Interface.classi(inputParameters);
 
             return Response.ok(JSONDealer.toJSON(classeMiurList)).build();
         } catch (AppException e) {
