@@ -83,6 +83,11 @@ public class Esse3SoapRequest {
     }
 
     private static String MapToString(Map<String, String> map) {
+
+        if(map.size() == 0){
+            return "";
+        }
+
         StringBuilder builder = new StringBuilder();
 
         for (Map.Entry<String, String> entry : map.entrySet()) {

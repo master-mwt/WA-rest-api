@@ -2,6 +2,7 @@ package it.univaq.disim.mwt;
 
 import it.univaq.disim.mwt.resources.AnnoAccademicoCorrenteRes;
 import it.univaq.disim.mwt.resources.ElencoAnniAccademiciRes;
+import it.univaq.disim.mwt.resources.FacoltaRes;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -19,6 +20,7 @@ public class RESTApp extends Application {
 
         c.add(AnnoAccademicoCorrenteRes.class);
         c.add(ElencoAnniAccademiciRes.class);
+        c.add(FacoltaRes.class);
 
         classes = Collections.unmodifiableSet(c);
     }

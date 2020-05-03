@@ -1,6 +1,7 @@
 package it.univaq.disim.mwt;
 
 import it.univaq.disim.mwt.model.lists.AnnoAccademicoList;
+import it.univaq.disim.mwt.model.lists.FacoltaList;
 
 import java.util.Map;
 
@@ -24,6 +25,16 @@ public class Esse3Interface {
         String xmlString = XmlDealer.getContent(response);
 
         return JAXBDealer.<AnnoAccademicoList>unMarshall(AnnoAccademicoList.class, xmlString);
+    }
+
+    public static FacoltaList facolta(Map<String, String> inputParameters) throws AppException {
+        // OP: FACOLTA
+        String opcode = "FACOLTA";
+
+        String response = Esse3SoapRequest.request(opcode, inputParameters);
+        String xmlString = XmlDealer.getContent(response);
+
+        return JAXBDealer.<FacoltaList>unMarshall(FacoltaList.class, xmlString);
     }
 
 }
