@@ -4,7 +4,7 @@ import it.univaq.disim.mwt.AppException;
 import it.univaq.disim.mwt.Esse3Interface;
 import it.univaq.disim.mwt.JSONDealer;
 import it.univaq.disim.mwt.RestWebApplicationException;
-import it.univaq.disim.mwt.model.AnnoAccademicoList;
+import it.univaq.disim.mwt.model.lists.AnnoAccademicoList;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

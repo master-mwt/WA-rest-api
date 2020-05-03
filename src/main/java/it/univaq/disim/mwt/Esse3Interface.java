@@ -1,6 +1,6 @@
 package it.univaq.disim.mwt;
 
-import it.univaq.disim.mwt.model.AnnoAccademicoList;
+import it.univaq.disim.mwt.model.lists.AnnoAccademicoList;
 
 import java.util.Map;
 
