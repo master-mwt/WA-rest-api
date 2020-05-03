@@ -17,10 +17,16 @@ public class RESTApp extends Application {
         HashSet<Class<?>> c = new HashSet<Class<?>>();
 
         c.add(AnnoAccademicoCorrenteRes.class);
-        c.add(ElencoAnniAccademiciRes.class);
-        c.add(ClassiRes.class);
-        c.add(FacoltaRes.class);
         c.add(AteneiRes.class);
+        c.add(ClasseDiLaureaDiUnCorsoDiStudioRes.class);
+        c.add(ClassiRes.class);
+        c.add(DatiDiDettaglioDiUnOrdinamentoDidatticoRes.class);
+        c.add(DatiDiDettaglioDiUnPercorsoDiStudioRes.class);
+        c.add(ElencoAnniAccademiciRes.class);
+        c.add(ElencoDegliOrdinamentiDiUnCorsoDiStudioRes.class);
+        c.add(ElencoDeiPercorsiDiUnCorsoDiStudioRes.class);
+        c.add(FacoltaRes.class);
+        c.add(TipiCorsiDiStudioRes.class);
 
         classes = Collections.unmodifiableSet(c);
     }

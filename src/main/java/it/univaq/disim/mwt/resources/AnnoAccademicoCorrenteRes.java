@@ -22,7 +22,7 @@ public class AnnoAccademicoCorrenteRes {
         Map<String, String> inputParameters = new HashMap<String, String>();
         inputParameters.put("tipo_data_rif_cod", tipo_data_rif_cod);
 
-        if(tipo_corso_cod != null){
+        if (tipo_corso_cod != null) {
             inputParameters.put("tipo_corso_cod", tipo_corso_cod);
         }
 
@@ -31,7 +31,8 @@ public class AnnoAccademicoCorrenteRes {
 
             return Response.ok(JSONDealer.toJSON(annoAccademicoList)).build();
 
-        } catch(AppException e){
+        } catch (AppException e) {
+            e.getCause().printStackTrace();
             throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Internal Server Error");
         }
     }

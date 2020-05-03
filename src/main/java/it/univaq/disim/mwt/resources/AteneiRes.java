@@ -26,7 +26,8 @@ public class AteneiRes {
             AteneoList ateneoList = Esse3Interface.atenei(inputParameters);
 
             return Response.ok(JSONDealer.toJSON(ateneoList)).build();
-        } catch (AppException e){
+        } catch (AppException e) {
+            e.getCause().printStackTrace();
             throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Internal Server Error");
         }
     }
