@@ -43,20 +43,25 @@ public class RESTApp extends Application {
         c.add(ElencoDelleAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //periodo didattico per attività didattiche offerte in un percorso di studio
         c.add(PeriodoDidatticoPerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
-        //(riccardo) informazioni logistiche per attività didattiche offerte in un percorso di studio
+        //informazioni logistiche per attività didattiche offerte in un percorso di studio
+        c.add(InformazioniLogistichePerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //(INPUT MAN CALL) docenti per attività didattiche offerte in un percorso di studio
-        //(riccardo) regole di scelta per attività didattiche offerte in un percorso di studio
+        //regole di scelta per attività didattiche offerte in un percorso di studio
+        c.add(RegoleDiSceltaPerAttivitàDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //(INPUT MAN CALL) segmenti di un percorso di studio o attività didattica offerta
         //(INPUT OPT CALL) contenuti di un'attività didattica offerta
         //regole di percorso tipi di attività formative
         c.add(RegoleDiPercorsoTipiDiAttivitaFormativeRes.class);
-        //(riccardo) regole di percorso ambiti disciplinari
+        //regole di percorso ambiti disciplinari
+        c.add(RegoleDiPercorsoAmbitiDisciplinariRes.class);
         //elenco delle attività didattiche fisiche
         c.add(ElencoDelleAttivitaDidatticheFisicheRes.class);
-        //(riccardo) elenco delle attività didattiche fisiche con docenti e partizioni
+        //elenco delle attività didattiche fisiche con docenti e partizioni
+        c.add(ElencoDelleAttivitaDidatticheFisicheConDocentiEPartizioniRes.class);
         //elenco delle unità didattiche di una specifica attività didattica offerta
         c.add(ElencoDelleUnitaDidatticheDiUnaSpecificaAttivitaDidatticaOffertaRes.class);
-        //(riccardo) comunità web per un'attività didattica offerta
+        //comunità web per un'attività didattica offerta
+        c.add(ComunitaWebPerUnAttivitaDidatticaOffertaRes.class);
 
         classes = Collections.unmodifiableSet(c);
     }

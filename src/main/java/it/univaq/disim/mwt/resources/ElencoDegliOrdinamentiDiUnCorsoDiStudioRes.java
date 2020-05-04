@@ -18,7 +18,7 @@ public class ElencoDegliOrdinamentiDiUnCorsoDiStudioRes {
     @GET
     @Path("{cds_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getElencoDegliOrdinamentiDiUnCorsoDiStudioRes(@PathParam("cds_id") int cds_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getElencoDegliOrdinamentiDiUnCorsoDiStudio(@PathParam("cds_id") int cds_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
         inputParameters.put("cds_id", String.valueOf(cds_id));
 
