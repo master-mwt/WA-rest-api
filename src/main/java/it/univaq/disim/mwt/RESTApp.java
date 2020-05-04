@@ -46,6 +46,7 @@ public class RESTApp extends Application {
         //informazioni logistiche per attività didattiche offerte in un percorso di studio
         c.add(InformazioniLogistichePerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //(INPUT MAN CALL) docenti per attività didattiche offerte in un percorso di studio
+        c.add(DocentiPerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //regole di scelta per attività didattiche offerte in un percorso di studio
         c.add(RegoleDiSceltaPerAttivitàDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //(INPUT MAN CALL) segmenti di un percorso di studio o attività didattica offerta
