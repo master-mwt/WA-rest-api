@@ -25,7 +25,7 @@ public class ContenutiDiUnAttivitaDidatticaOffertaRes {
             inputParameters.put("lingua_iso6392_cod", lingua_iso6392_cod);
         }
 
-        if(ad_log_id != 0){
+        if (ad_log_id != 0) {
             inputParameters.put("ad_log_id", String.valueOf(ad_log_id));
         } else {
             if (cds_id != 0) {

@@ -21,7 +21,7 @@ public class RESTApp extends Application {
         c.add(ClassiRes.class);
         c.add(FacoltaRes.class);
         c.add(AteneiRes.class);
-        //(INPUT MAN CALL) corsi di studio
+        c.add(CorsiDiStudioRes.class);
         c.add(TipiCorsiDiStudioRes.class);
         c.add(ClasseDiLaureaDiUnCorsoDiStudioRes.class);
         c.add(ElencoDegliOrdinamentiDiUnCorsoDiStudioRes.class);
