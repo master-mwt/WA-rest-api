@@ -50,6 +50,7 @@ public class RESTApp extends Application {
         c.add(RegoleDiSceltaPerAttivitàDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //(INPUT MAN CALL) segmenti di un percorso di studio o attività didattica offerta
         //(INPUT OPT CALL) contenuti di un'attività didattica offerta
+        c.add(ContenutiDiUnAttivitaDidatticaOffertaRes.class);
         //regole di percorso tipi di attività formative
         c.add(RegoleDiPercorsoTipiDiAttivitaFormativeRes.class);
         //regole di percorso ambiti disciplinari
