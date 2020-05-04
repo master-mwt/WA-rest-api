@@ -26,7 +26,7 @@ public class RESTApp extends Application {
         c.add(FacoltaRes.class);
         //atenei
         c.add(AteneiRes.class);
-        //corsi di studio
+        //(INPUT MAN CALL) corsi di studio
         //tipi corsi di studio
         c.add(TipiCorsiDiStudioRes.class);
         //classe di laurea di un corso di studio
@@ -42,17 +42,21 @@ public class RESTApp extends Application {
         //elenco delle attività didattiche offerte in un percorso di studio
         c.add(ElencoDelleAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         //periodo didattico per attività didattiche offerte in un percorso di studio
-        //informazioni logistiche per attività didattiche offerte in un percorso di studio
-        //docenti per attività didattiche offerte in un percorso di studio
-        //regole di scelta per attività didattiche offerte in un percorso di studio
-        //segmenti di un percorso di studio o attività didattica offerta
-        //contenuti di un'attività didattica offerta
+        c.add(PeriodoDidatticoPerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
+        //(riccardo) informazioni logistiche per attività didattiche offerte in un percorso di studio
+        //(INPUT MAN CALL) docenti per attività didattiche offerte in un percorso di studio
+        //(riccardo) regole di scelta per attività didattiche offerte in un percorso di studio
+        //(INPUT MAN CALL) segmenti di un percorso di studio o attività didattica offerta
+        //(INPUT OPT CALL) contenuti di un'attività didattica offerta
         //regole di percorso tipi di attività formative
-        //regole di percorso ambiti disciplinari
+        c.add(RegoleDiPercorsoTipiDiAttivitaFormativeRes.class);
+        //(riccardo) regole di percorso ambiti disciplinari
         //elenco delle attività didattiche fisiche
-        //elenco delle attività didattiche fisiche con docenti e partizioni
+        c.add(ElencoDelleAttivitaDidatticheFisicheRes.class);
+        //(riccardo) elenco delle attività didattiche fisiche con docenti e partizioni
         //elenco delle unità didattiche di una specifica attività didattica offerta
-        //comunità web per un'attività didattica offerta
+        c.add(ElencoDelleUnitaDidatticheDiUnaSpecificaAttivitaDidatticaOffertaRes.class);
+        //(riccardo) comunità web per un'attività didattica offerta
 
         classes = Collections.unmodifiableSet(c);
     }
