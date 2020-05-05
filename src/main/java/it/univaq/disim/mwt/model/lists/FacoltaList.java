@@ -16,5 +16,5 @@ import java.util.List;
 public class FacoltaList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    List<Facolta> facoltaList;
+    private List<Facolta> facoltaList;
 }

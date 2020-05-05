@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class Facolta {
-    int fac_id;
-    String via;
-    String citta;
-    String prov;
-    int cap;
-    String cod;
-    String des;
-    int web_view_flag;
+    private int fac_id;
+    private String via;
+    private String citta;
+    private String prov;
+    private int cap;
+    private String cod;
+    private String des;
+    private int web_view_flag;
 }

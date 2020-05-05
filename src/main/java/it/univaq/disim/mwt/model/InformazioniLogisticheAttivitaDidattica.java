@@ -4,15 +4,15 @@ import lombok.Data;
 
 @Data
 public class InformazioniLogisticheAttivitaDidattica {
-    int cds_id;
-    int aa_off_id;
-    int ad_id;
-    int aa_ord_id;
-    int pds_id;
-    String fat_part_cod;
-    String dom_part_cod;
-    String part_cod;
-    int ad_log_id;
-    String dom_part_des;
-    String p06_part_des;
+    private int cds_id;
+    private int aa_off_id;
+    private int ad_id;
+    private int aa_ord_id;
+    private int pds_id;
+    private String fat_part_cod;
+    private String dom_part_cod;
+    private String part_cod;
+    private int ad_log_id;
+    private String dom_part_des;
+    private String p06_part_des;
 }

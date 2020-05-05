@@ -4,19 +4,19 @@ import lombok.Data;
 
 @Data
 public class ContenutiAttivitaDidattica {
-    String fat_part_cod;
-    String dom_part_cod;
-    int ad_log_id;
-    int des_ad_pubbl_flg;
-    String testi_rif_des;
-    String dom_part_des;
-    String contenuti_des;
-    String obiett_form_des;
-    String prerequisiti_des;
-    String metodi_did_des;
+    private String fat_part_cod;
+    private String dom_part_cod;
+    private int ad_log_id;
+    private int des_ad_pubbl_flg;
+    private String testi_rif_des;
+    private String dom_part_des;
+    private String contenuti_des;
+    private String obiett_form_des;
+    private String prerequisiti_des;
+    private String metodi_did_des;
     // TODO: Duplicated
-    String metodi_did_des2;
+    private String metodi_did_des2;
 
-    String mod_ver_appr_des;
-    String altre_info_des;
+    private String mod_ver_appr_des;
+    private String altre_info_des;
 }

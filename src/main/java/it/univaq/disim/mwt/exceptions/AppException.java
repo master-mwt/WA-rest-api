@@ -1,4 +1,4 @@
-package it.univaq.disim.mwt;
+package it.univaq.disim.mwt.exceptions;
 
 public class AppException extends Exception {
     public AppException() {

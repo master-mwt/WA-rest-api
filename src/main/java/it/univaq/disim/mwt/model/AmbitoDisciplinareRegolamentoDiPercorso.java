@@ -4,16 +4,16 @@ import lombok.Data;
 
 @Data
 public class AmbitoDisciplinareRegolamentoDiPercorso {
-    int cds_id;
-    int aa_ord_id;
-    int pds_id;
-    int ins_id;
-    String prof_cod;
-    String tipi_profstu_des;
-    String tipo_af_cod;
-    int cfu_min;
-    int cfu_max;
-    int amb_id;
-    String p07_ambiti_des;
-    String tipi_af_des;
+    private int cds_id;
+    private int aa_ord_id;
+    private int pds_id;
+    private int ins_id;
+    private String prof_cod;
+    private String tipi_profstu_des;
+    private String tipo_af_cod;
+    private int cfu_min;
+    private int cfu_max;
+    private int amb_id;
+    private String p07_ambiti_des;
+    private String tipi_af_des;
 }

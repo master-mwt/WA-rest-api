@@ -1,10 +1,10 @@
 package it.univaq.disim.mwt.resources;
 
-import it.univaq.disim.mwt.AppException;
-import it.univaq.disim.mwt.Esse3Interface;
-import it.univaq.disim.mwt.JSONDealer;
-import it.univaq.disim.mwt.RestWebApplicationException;
+import it.univaq.disim.mwt.esse3.Esse3Interface;
+import it.univaq.disim.mwt.exceptions.AppException;
+import it.univaq.disim.mwt.exceptions.RestWebApplicationException;
 import it.univaq.disim.mwt.model.lists.FacoltaList;
+import it.univaq.disim.mwt.utils.JSONDealer;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -20,11 +20,11 @@ public class FacoltaRes {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getFacolta(@QueryParam("fac_id") int fac_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getFacolta(@QueryParam("fac_id") String fac_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
 
-        if (fac_id != 0) {
-            inputParameters.put("fac_id", String.valueOf(fac_id));
+        if (fac_id != null) {
+            inputParameters.put("fac_id", fac_id);
         }
 
         if (lingua_iso6392_cod != null) {

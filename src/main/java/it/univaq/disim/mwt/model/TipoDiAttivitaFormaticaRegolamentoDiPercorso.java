@@ -4,14 +4,14 @@ import lombok.Data;
 
 @Data
 public class TipoDiAttivitaFormaticaRegolamentoDiPercorso {
-    int cds_id;
-    int aa_ord_id;
-    int pds_id;
-    int ins_id;
-    int prof_cod;
-    String tipi_profstu_des;
-    int cfu_max;
-    int cfu_min;
-    String tipo_af_cod;
-    String tipi_af_des;
+    private int cds_id;
+    private int aa_ord_id;
+    private int pds_id;
+    private int ins_id;
+    private int prof_cod;
+    private String tipi_profstu_des;
+    private int cfu_max;
+    private int cfu_min;
+    private String tipo_af_cod;
+    private String tipi_af_des;
 }

@@ -1,4 +1,6 @@
-package it.univaq.disim.mwt;
+package it.univaq.disim.mwt.esse3;
+
+import it.univaq.disim.mwt.exceptions.AppException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -84,7 +86,7 @@ public class Esse3SoapRequest {
 
     private static String MapToString(Map<String, String> map) {
 
-        if(map.size() == 0){
+        if (map == null || map.size() == 0) {
             return "";
         }
 

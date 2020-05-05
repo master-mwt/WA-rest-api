@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class Ateneo {
-    int ateneo_id;
-    String des;
-    String citta;
-    String prov;
-    String via;
-    String url_guida_web;
+    private int ateneo_id;
+    private String des;
+    private String citta;
+    private String prov;
+    private String via;
+    private String url_guida_web;
 }

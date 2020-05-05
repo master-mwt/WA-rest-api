@@ -16,5 +16,5 @@ import java.util.List;
 public class TipoDiAttivitaFormaticaRegolamentoDiPercorsoList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    List<TipoDiAttivitaFormaticaRegolamentoDiPercorso> tipoDiAttivitaFormaticaRegolamentoDiPercorsoList;
+    private List<TipoDiAttivitaFormaticaRegolamentoDiPercorso> tipoDiAttivitaFormaticaRegolamentoDiPercorsoList;
 }

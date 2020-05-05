@@ -1,7 +1,8 @@
-package it.univaq.disim.mwt;
+package it.univaq.disim.mwt.utils;
 
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import it.univaq.disim.mwt.exceptions.AppException;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -53,7 +54,7 @@ public class XmlDealer {
 
             xmlString = sw.toString();
 
-        } catch(TransformerException ex){
+        } catch (TransformerException ex) {
             throw new AppException(ex);
         }
 

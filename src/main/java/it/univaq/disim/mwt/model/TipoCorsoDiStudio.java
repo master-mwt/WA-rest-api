@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class TipoCorsoDiStudio {
-    String tipo_corso_cod;
-    String tipo_corso_des;
-    int durata_anni;
-    int valore_min;
-    int rif_flg;
-    String tipo_titit_cod;
-    String um_durata;
-    int durata_effettiva;
+    private String tipo_corso_cod;
+    private String tipo_corso_des;
+    private int durata_anni;
+    private int valore_min;
+    private int rif_flg;
+    private String tipo_titit_cod;
+    private String um_durata;
+    private int durata_effettiva;
 }

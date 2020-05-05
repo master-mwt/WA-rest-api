@@ -15,5 +15,5 @@ import java.util.List;
 public class AmbitoDisciplinareRegolamentoDiPercorsoList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    List<AmbitoDisciplinareRegolamentoDiPercorsoList> ambitoDisciplinareRegolamentoDiPercorsoList;
+    private List<AmbitoDisciplinareRegolamentoDiPercorsoList> ambitoDisciplinareRegolamentoDiPercorsoList;
 }

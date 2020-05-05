@@ -1,10 +1,10 @@
 package it.univaq.disim.mwt.resources;
 
-import it.univaq.disim.mwt.AppException;
-import it.univaq.disim.mwt.Esse3Interface;
-import it.univaq.disim.mwt.JSONDealer;
-import it.univaq.disim.mwt.RestWebApplicationException;
+import it.univaq.disim.mwt.esse3.Esse3Interface;
+import it.univaq.disim.mwt.exceptions.AppException;
+import it.univaq.disim.mwt.exceptions.RestWebApplicationException;
 import it.univaq.disim.mwt.model.lists.AnnoAccademicoList;
+import it.univaq.disim.mwt.utils.JSONDealer;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -21,9 +21,9 @@ public class ElencoAnniAccademiciRes {
     @GET
     @Path("{aa_ini_id: ([0-9]{4})}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getElencoAnniAccademici(@PathParam("aa_ini_id") int aa_ini_id) {
+    public Response getElencoAnniAccademici(@PathParam("aa_ini_id") String aa_ini_id) {
         Map<String, String> inputParameters = new HashMap<String, String>();
-        inputParameters.put("aa_ini_id", String.valueOf(aa_ini_id));
+        inputParameters.put("aa_ini_id", aa_ini_id);
 
         try {
             AnnoAccademicoList annoAccademicoList = Esse3Interface.elencoAnniAccademici(inputParameters);

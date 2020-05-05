@@ -1,6 +1,9 @@
-package it.univaq.disim.mwt;
+package it.univaq.disim.mwt.esse3;
 
+import it.univaq.disim.mwt.exceptions.AppException;
 import it.univaq.disim.mwt.model.lists.*;
+import it.univaq.disim.mwt.utils.JAXBDealer;
+import it.univaq.disim.mwt.utils.XmlDealer;
 
 import java.util.Map;
 

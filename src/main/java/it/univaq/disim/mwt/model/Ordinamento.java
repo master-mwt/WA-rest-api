@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class Ordinamento {
-    String p06_stati_ord_des;
-    int aa_ord_id;
-    int cds_id;
-    String des;
-    String cod;
+    private String p06_stati_ord_des;
+    private int aa_ord_id;
+    private int cds_id;
+    private String des;
+    private String cod;
 }

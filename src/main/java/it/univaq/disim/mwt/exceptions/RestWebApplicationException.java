@@ -1,4 +1,4 @@
-package it.univaq.disim.mwt;
+package it.univaq.disim.mwt.exceptions;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
@@ -12,15 +12,15 @@ public class RestWebApplicationException extends WebApplicationException {
 
     public RestWebApplicationException(String message) {
         super(Response.serverError()
-            .entity(message)
-            .type(MediaType.TEXT_PLAIN)
-            .build());
+                .entity(message)
+                .type(MediaType.TEXT_PLAIN)
+                .build());
     }
 
     public RestWebApplicationException(int status, String message) {
         super(Response.status(status)
-            .entity(message)
-            .type(MediaType.TEXT_PLAIN)
-            .build());
+                .entity(message)
+                .type(MediaType.TEXT_PLAIN)
+                .build());
     }
 }

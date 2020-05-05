@@ -1,10 +1,10 @@
 package it.univaq.disim.mwt.resources;
 
-import it.univaq.disim.mwt.AppException;
-import it.univaq.disim.mwt.Esse3Interface;
-import it.univaq.disim.mwt.JSONDealer;
-import it.univaq.disim.mwt.RestWebApplicationException;
+import it.univaq.disim.mwt.esse3.Esse3Interface;
+import it.univaq.disim.mwt.exceptions.AppException;
+import it.univaq.disim.mwt.exceptions.RestWebApplicationException;
 import it.univaq.disim.mwt.model.lists.AnnoAccademicoList;
+import it.univaq.disim.mwt.utils.JSONDealer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

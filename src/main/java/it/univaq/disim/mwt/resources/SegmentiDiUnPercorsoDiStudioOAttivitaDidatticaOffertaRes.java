@@ -1,10 +1,10 @@
 package it.univaq.disim.mwt.resources;
 
-import it.univaq.disim.mwt.AppException;
-import it.univaq.disim.mwt.Esse3Interface;
-import it.univaq.disim.mwt.JSONDealer;
-import it.univaq.disim.mwt.RestWebApplicationException;
+import it.univaq.disim.mwt.esse3.Esse3Interface;
+import it.univaq.disim.mwt.exceptions.AppException;
+import it.univaq.disim.mwt.exceptions.RestWebApplicationException;
 import it.univaq.disim.mwt.model.lists.SegmentiAttivitaDidatticaList;
+import it.univaq.disim.mwt.utils.JSONDealer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,13 +17,13 @@ public class SegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes {
     @GET
     @Path("{ad_off_id: ([0-9]+)}/{ad_log_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes(@PathParam("ad_off_id") int ad_off_id, @PathParam("ad_log_id") int ad_log_id, @QueryParam("ad_id") int ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getSegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes(@PathParam("ad_off_id") String ad_off_id, @PathParam("ad_log_id") String ad_log_id, @QueryParam("ad_id") String ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
-        inputParameters.put("ad_off_id", String.valueOf(ad_off_id));
-        inputParameters.put("ad_log_id", String.valueOf(ad_log_id));
+        inputParameters.put("ad_off_id", ad_off_id);
+        inputParameters.put("ad_log_id", ad_log_id);
 
-        if (ad_id != 0) {
-            inputParameters.put("ad_id", String.valueOf(ad_id));
+        if (ad_id != null) {
+            inputParameters.put("ad_id", ad_id);
         }
 
         if (lingua_iso6392_cod != null) {
@@ -43,15 +43,15 @@ public class SegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes {
     @GET
     @Path("{ad_off_id: ([0-9]+)}/{cds_id: ([0-9]+)}/{aa_ord_id: ([0-9]+)}/{pds_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes(@PathParam("ad_off_id") int ad_off_id, @PathParam("cds_id") int cds_id, @PathParam("aa_ord_id") int aa_ord_id, @PathParam("pds_id") int pds_id, @QueryParam("ad_id") int ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getSegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes(@PathParam("ad_off_id") String ad_off_id, @PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @PathParam("pds_id") String pds_id, @QueryParam("ad_id") String ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
-        inputParameters.put("ad_off_id", String.valueOf(ad_off_id));
-        inputParameters.put("cds_id", String.valueOf(cds_id));
-        inputParameters.put("aa_ord_id", String.valueOf(aa_ord_id));
-        inputParameters.put("pds_id", String.valueOf(pds_id));
+        inputParameters.put("ad_off_id", ad_off_id);
+        inputParameters.put("cds_id", cds_id);
+        inputParameters.put("aa_ord_id", aa_ord_id);
+        inputParameters.put("pds_id", pds_id);
 
-        if (ad_id != 0) {
-            inputParameters.put("ad_id", String.valueOf(ad_id));
+        if (ad_id != null) {
+            inputParameters.put("ad_id", ad_id);
         }
 
         if (lingua_iso6392_cod != null) {

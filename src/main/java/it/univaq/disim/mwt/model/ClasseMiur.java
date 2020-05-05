@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class ClasseMiur {
-    int cla_m_id;
-    String tipo_corso_cod;
-    String des;
-    String cod;
+    private int cla_m_id;
+    private String tipo_corso_cod;
+    private String des;
+    private String cod;
 }

@@ -4,13 +4,13 @@ import lombok.Data;
 
 @Data
 public class UnitaDidatticaAttivitaDidattica {
-    int cds_id;
-    int aa_off_id;
-    int ad_id;
-    int aa_ord_id;
-    int pds_id;
-    int ud_id;
-    String cod;
-    int ud_log_id;
-    String des;
+    private int cds_id;
+    private int aa_off_id;
+    private int ad_id;
+    private int aa_ord_id;
+    private int pds_id;
+    private int ud_id;
+    private String cod;
+    private int ud_log_id;
+    private String des;
 }

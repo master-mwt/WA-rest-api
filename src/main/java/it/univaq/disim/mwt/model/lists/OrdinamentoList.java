@@ -16,5 +16,5 @@ import java.util.List;
 public class OrdinamentoList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    List<Ordinamento> ordinamentoList;
+    private List<Ordinamento> ordinamentoList;
 }

@@ -16,5 +16,5 @@ import java.util.List;
 public class UnitaDidatticaAttivitaDidatticaList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    List<UnitaDidatticaAttivitaDidattica> unitaDidatticaAttivitaDidatticaList;
+    private List<UnitaDidatticaAttivitaDidattica> unitaDidatticaAttivitaDidatticaList;
 }
