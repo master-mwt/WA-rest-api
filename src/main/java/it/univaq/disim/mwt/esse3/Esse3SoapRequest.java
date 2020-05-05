@@ -10,14 +10,34 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 
+/**
+ * Class used to send requests to the Esse3's server
+ */
 public class Esse3SoapRequest {
 
     private final static String URL = "https://segreteriavirtuale.univaq.it/services/ESSE3WS";
 
+    /**
+     * Send request to the Esse3 server
+     *
+     * @param opcode Esse3 Request Operation Code
+     * @param inputParameters Esse3 Request parameters
+     * @return A String that represents the response of the server
+     * @throws AppException
+     */
     public static String request(String opcode, Map<String, String> inputParameters) throws AppException {
         return soapRequest(URL, opcode, MapToString(inputParameters));
     }
 
+    /**
+     * Send request to the Esse3 server
+     *
+     * @param urlString The URL of the server
+     * @param opcode Esse3 Request Operation Code
+     * @param inputParameters Esse3 Request parameters
+     * @return A String that represents the response of the server
+     * @throws AppException
+     */
     private static String soapRequest(String urlString, String opcode, String inputParameters) throws AppException {
 
         HttpURLConnection con = null;
@@ -84,6 +104,12 @@ public class Esse3SoapRequest {
         return result;
     }
 
+    /**
+     * This function converts the map that contains the input parameters in a String
+     *
+     * @param map Map that will be converted
+     * @return String representation of the input parameters
+     */
     private static String MapToString(Map<String, String> map) {
 
         if (map == null || map.size() == 0) {
