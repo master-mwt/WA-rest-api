@@ -16,7 +16,7 @@ import java.util.Map;
 public class DatiDiDettaglioDiUnOrdinamentoDidatticoRes {
 
     @GET
-    @Path("{cds_id: ([0-9]+)}/{aa_ord_id: ([0-9]+)}")
+    @Path("cds_id/{cds_id: ([0-9]+)}/aa_ord_id/{aa_ord_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDatiDiDettaglioDiUnOrdinamentoDidattico(@PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();

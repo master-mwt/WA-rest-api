@@ -16,7 +16,7 @@ import java.util.Map;
 public class RegoleDiPercorsoAmbitiDisciplinariRes {
 
     @GET
-    @Path("{cds_id: ([0-9]+)}/{aa_ord_id: ([0-9]+)}/{pds_id: ([0-9]+)}/{prof_cod: ([0-9]+)}/{aa_reg_id: ([0-9]+)}")
+    @Path("cds_id/{cds_id: ([0-9]+)}/aa_ord_id/{aa_ord_id: ([0-9]+)}/pds_id/{pds_id: ([0-9]+)}/prof_cod/{prof_cod: ([0-9]+)}/aa_reg_id/{aa_reg_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getRegoleDiPercorsoAmbitiDisciplinari(@PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @PathParam("pds_id") String pds_id, @PathParam("prof_cod") String prof_cod, @PathParam("aa_reg_id") String aa_reg_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();

@@ -19,7 +19,7 @@ import java.util.Map;
 public class ElencoAnniAccademiciRes {
 
     @GET
-    @Path("{aa_ini_id: ([0-9]{4})}")
+    @Path("aa_ini_id/{aa_ini_id: ([0-9]{4})}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getElencoAnniAccademici(@PathParam("aa_ini_id") String aa_ini_id) {
         Map<String, String> inputParameters = new HashMap<String, String>();

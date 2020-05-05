@@ -16,7 +16,7 @@ import java.util.Map;
 public class AnnoAccademicoCorrenteRes {
 
     @GET
-    @Path("{tipo_data_rif_cod: (DR_CALESA|DR_CARR|DR_IPO|DR_ISCR|DR_OFF|DR_PASS|DR_RICO|DR_SOSP|DR_TASSE|DR_TRASF|DR_TRA_IN){1}}")
+    @Path("tipo_data_rif_cod/{tipo_data_rif_cod: (DR_CALESA|DR_CARR|DR_IPO|DR_ISCR|DR_OFF|DR_PASS|DR_RICO|DR_SOSP|DR_TASSE|DR_TRASF|DR_TRA_IN){1}}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAnnoAccademicoCorrente(@PathParam("tipo_data_rif_cod") String tipo_data_rif_cod, @QueryParam("tipo_corso_cod") String tipo_corso_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();

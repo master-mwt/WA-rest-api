@@ -32,7 +32,7 @@ public class RESTApp extends Application {
         c.add(PeriodoDidatticoPerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         c.add(InformazioniLogistichePerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         c.add(DocentiPerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
-        c.add(RegoleDiSceltaPerAttivitàDidatticheOfferteInUnPercorsoDiStudioRes.class);
+        c.add(RegoleDiSceltaPerAttivitaDidatticheOfferteInUnPercorsoDiStudioRes.class);
         c.add(SegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes.class);
         c.add(ContenutiDiUnAttivitaDidatticaOffertaRes.class);
         c.add(RegoleDiPercorsoTipiDiAttivitaFormativeRes.class);

@@ -15,7 +15,7 @@ import java.util.Map;
 @Path("corsi_di_studio")
 public class CorsiDiStudioRes {
     @GET
-    @Path("{aa_id: ([0-9]+)}/{tipo_corso: (L1|L2|LC5|LC6|LS|LM|LM5|LM6|D|D1|DU|M1|M2|S1|SDFS|SHSP){1}}")
+    @Path("aa_id/{aa_id: ([0-9]+)}/tipo_corso/{tipo_corso: (L1|L2|LC5|LC6|LS|LM|LM5|LM6|D|D1|DU|M1|M2|S1|SDFS|SHSP){1}}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCorsiDiStudioTipoCorso(@PathParam("aa_id") String aa_id, @PathParam("tipo_corso") String tipo_corso, @QueryParam("cla_id") String cla_id, @QueryParam("fac_id") String fac_id, @QueryParam("cds_des") String cds_des, @QueryParam("aa_ord_id") String aa_ord_id, @QueryParam("norm_id") String norm_id, @QueryParam("cds_id") String cds_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
@@ -62,7 +62,7 @@ public class CorsiDiStudioRes {
     }
 
     @GET
-    @Path("{aa_id: ([0-9]+)}/{cds_id: ([0-9]+)}")
+    @Path("aa_id/{aa_id: ([0-9]+)}/cds_id/{cds_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCorsiDiStudioCdsId(@PathParam("aa_id") String aa_id, @PathParam("cds_id") String cds_id, @QueryParam("cla_id") String cla_id, @QueryParam("fac_id") String fac_id, @QueryParam("cds_des") String cds_des, @QueryParam("aa_ord_id") String aa_ord_id, @QueryParam("norm_id") String norm_id, @QueryParam("tipo_corso") String tipo_corso, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();

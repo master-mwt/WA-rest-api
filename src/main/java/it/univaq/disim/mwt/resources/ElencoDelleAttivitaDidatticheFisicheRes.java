@@ -16,7 +16,7 @@ import java.util.Map;
 public class ElencoDelleAttivitaDidatticheFisicheRes {
 
     @GET
-    @Path("{aa_off_id: ([0-9]+)}")
+    @Path("aa_off_id/{aa_off_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getElencoDelleAttivitaDidatticheFisicheRes(@PathParam("aa_off_id") String aa_off_id, @QueryParam("fac_id") String fac_id, @QueryParam("cds_id") String cds_id, @QueryParam("doc_des") String doc_des, @QueryParam("att_did_des") String att_did_des, @QueryParam("titolare_flg") String titolare_flg, @QueryParam("resp_ud_flg") String resp_ud_flg, @QueryParam("lezione_flg") String lezione_flg, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();

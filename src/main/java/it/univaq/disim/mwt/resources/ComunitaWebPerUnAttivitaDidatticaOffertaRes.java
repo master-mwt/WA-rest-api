@@ -18,7 +18,7 @@ import java.util.Map;
 @Path("comunita_web_per_un_attivita_didattica_offerta")
 public class ComunitaWebPerUnAttivitaDidatticaOffertaRes {
     @GET
-    @Path("{cds_id: ([0-9]+)}/{aa_ord_id: ([0-9]+)}/{pds_id: ([0-9]+)}/{aa_off_id: ([0-9]+)}/{aa_id: ([0-9]+)}")
+    @Path("cds_id/{cds_id: ([0-9]+)}/aa_ord_id/{aa_ord_id: ([0-9]+)}/pds_id/{pds_id: ([0-9]+)}/aa_off_id/{aa_off_id: ([0-9]+)}/aa_id/{aa_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getComunitaWebPerUnAttivitaDidatticaOfferta(@PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @PathParam("pds_id") String pds_id, @PathParam("aa_off_id") String aa_off_id, @PathParam("aa_id") String aa_id) {
         Map<String, String> inputParameters = new HashMap<String, String>();
