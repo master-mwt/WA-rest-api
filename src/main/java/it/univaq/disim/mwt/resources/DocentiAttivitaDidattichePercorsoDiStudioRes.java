@@ -32,8 +32,8 @@ public class DocentiAttivitaDidattichePercorsoDiStudioRes {
             return Response.ok(JSONDealer.toJSON(docenteAttivitaDidatticaList)).build();
 
         } catch (AppException e) {
-            e.getCause().printStackTrace();
-            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), e.getCause().getMessage());
+            // e.getCause().printStackTrace();
+            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), JSONDealer.errorToJSON(e));
         }
     }
 
@@ -59,8 +59,8 @@ public class DocentiAttivitaDidattichePercorsoDiStudioRes {
             return Response.ok(JSONDealer.toJSON(docenteAttivitaDidatticaList)).build();
 
         } catch (AppException e) {
-            e.getCause().printStackTrace();
-            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), e.getCause().getMessage());
+            // e.getCause().printStackTrace();
+            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), JSONDealer.errorToJSON(e));
         }
     }
 }

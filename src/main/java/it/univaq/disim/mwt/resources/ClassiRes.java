@@ -32,8 +32,8 @@ public class ClassiRes {
 
             return Response.ok(JSONDealer.toJSON(classeMiurList)).build();
         } catch (AppException e) {
-            e.getCause().printStackTrace();
-            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Internal Server Error");
+            // e.getCause().printStackTrace();
+            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), JSONDealer.errorToJSON(e));
         }
     }
 }

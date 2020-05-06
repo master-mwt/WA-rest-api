@@ -2,6 +2,7 @@ package it.univaq.disim.mwt.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import it.univaq.disim.mwt.exceptions.AppException;
 
 /**
@@ -26,5 +27,19 @@ public class JSONDealer {
         }
 
         return jsonString;
+    }
+
+    /**
+     * Function that extract the AppException message and writes it in a JSON String
+     *
+     * @param e An AppException object
+     * @return JSON String
+     */
+    public static String errorToJSON(AppException e) {
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode objectNode = mapper.createObjectNode();
+        objectNode.put("error", (e.getCause() != null) ? e.getCause().getMessage() : e.getMessage());
+
+        return objectNode.toString();
     }
 }
