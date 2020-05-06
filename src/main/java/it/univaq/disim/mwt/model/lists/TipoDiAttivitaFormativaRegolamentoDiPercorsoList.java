@@ -1,7 +1,7 @@
 package it.univaq.disim.mwt.model.lists;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import it.univaq.disim.mwt.model.TipoDiAttivitaFormaticaRegolamentoDiPercorso;
+import it.univaq.disim.mwt.model.TipoDiAttivitaFormativaRegolamentoDiPercorso;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,8 +13,8 @@ import java.util.List;
 @Data
 @XmlRootElement(name = "DataSet")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TipoDiAttivitaFormaticaRegolamentoDiPercorsoList {
+public class TipoDiAttivitaFormativaRegolamentoDiPercorsoList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    private List<TipoDiAttivitaFormaticaRegolamentoDiPercorso> tipoDiAttivitaFormaticaRegolamentoDiPercorsoList;
+    private List<TipoDiAttivitaFormativaRegolamentoDiPercorso> tipoDiAttivitaFormaticaRegolamentoDiPercorsoList;
 }

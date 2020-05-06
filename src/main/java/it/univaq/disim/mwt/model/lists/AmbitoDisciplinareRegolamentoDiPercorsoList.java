@@ -1,6 +1,7 @@
 package it.univaq.disim.mwt.model.lists;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import it.univaq.disim.mwt.model.AmbitoDisciplinareRegolamentoDiPercorso;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -15,5 +16,5 @@ import java.util.List;
 public class AmbitoDisciplinareRegolamentoDiPercorsoList {
     @XmlElement(name = "Row")
     @JsonProperty("data")
-    private List<AmbitoDisciplinareRegolamentoDiPercorsoList> ambitoDisciplinareRegolamentoDiPercorsoList;
+    private List<AmbitoDisciplinareRegolamentoDiPercorso> ambitoDisciplinareRegolamentoDiPercorsoList;
 }

@@ -12,12 +12,12 @@ import javax.ws.rs.core.Response;
 import java.util.HashMap;
 import java.util.Map;
 
-@Path("contenuti_di_un_attivita_didattica_offerta")
-public class ContenutiDiUnAttivitaDidatticaOffertaRes {
+@Path("contenuti_attivita_didattica")
+public class ContenutiAttivitaDidatticaRes {
     @GET
     @Path("aa_off_id/{aa_off_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getContenutiDiUnAttivitaDidatticaOfferta(@PathParam("aa_off_id") String aa_off_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod, @QueryParam("cds_id") String cds_id, @QueryParam("aa_ord_id") String aa_ord_id, @QueryParam("pds_id") String pds_id, @QueryParam("ad_id") String ad_id, @QueryParam("ad_log_id") String ad_log_id) {
+    public Response getContenutiAttivitaDidattica(@PathParam("aa_off_id") String aa_off_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod, @QueryParam("cds_id") String cds_id, @QueryParam("aa_ord_id") String aa_ord_id, @QueryParam("pds_id") String pds_id, @QueryParam("ad_id") String ad_id, @QueryParam("ad_log_id") String ad_log_id) {
         Map<String, String> inputParameters = new HashMap<String, String>();
         inputParameters.put("aa_off_id", aa_off_id);
 

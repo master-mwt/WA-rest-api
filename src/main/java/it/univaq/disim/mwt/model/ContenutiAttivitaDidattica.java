@@ -14,9 +14,6 @@ public class ContenutiAttivitaDidattica {
     private String obiett_form_des;
     private String prerequisiti_des;
     private String metodi_did_des;
-    // TODO: Duplicated
-    private String metodi_did_des2;
-
     private String mod_ver_appr_des;
     private String altre_info_des;
 }

@@ -90,7 +90,6 @@ public class CorsiDiStudioRes {
         }
 
         if (tipo_corso != null) {
-            // TODO: Regex da controllare
             if (tipo_corso.matches("(L1|L2|LC5|LC6|LS|LM|LM5|LM6|D|D1|DU|M1|M2|S1|SDFS|SHSP){1}")) {
                 inputParameters.put("tipo_corso", tipo_corso);
             }

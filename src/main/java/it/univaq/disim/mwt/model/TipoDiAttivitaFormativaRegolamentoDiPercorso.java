@@ -3,7 +3,7 @@ package it.univaq.disim.mwt.model;
 import lombok.Data;
 
 @Data
-public class TipoDiAttivitaFormaticaRegolamentoDiPercorso {
+public class TipoDiAttivitaFormativaRegolamentoDiPercorso {
     private int cds_id;
     private int aa_ord_id;
     private int pds_id;

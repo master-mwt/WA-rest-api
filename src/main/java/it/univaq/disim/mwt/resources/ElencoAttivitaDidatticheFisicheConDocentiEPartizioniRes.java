@@ -3,7 +3,7 @@ package it.univaq.disim.mwt.resources;
 import it.univaq.disim.mwt.esse3.Esse3Interface;
 import it.univaq.disim.mwt.exceptions.AppException;
 import it.univaq.disim.mwt.exceptions.RestWebApplicationException;
-import it.univaq.disim.mwt.model.lists.AttivitaDidatticaFisicaCorsoDiStudioList;
+import it.univaq.disim.mwt.model.lists.AttivitaDidatticaFisicaConDocentiCorsoDiStudioList;
 import it.univaq.disim.mwt.utils.JSONDealer;
 
 import javax.ws.rs.*;
@@ -12,13 +12,12 @@ import javax.ws.rs.core.Response;
 import java.util.HashMap;
 import java.util.Map;
 
-@Path("elenco_delle_attivita_didattiche_fisiche")
-public class ElencoDelleAttivitaDidatticheFisicheRes {
-
+@Path("elenco_attivita_didattiche_fisiche_con_docenti_e_partizioni")
+public class ElencoAttivitaDidatticheFisicheConDocentiEPartizioniRes {
     @GET
     @Path("aa_off_id/{aa_off_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getElencoDelleAttivitaDidatticheFisicheRes(@PathParam("aa_off_id") String aa_off_id, @QueryParam("fac_id") String fac_id, @QueryParam("cds_id") String cds_id, @QueryParam("doc_des") String doc_des, @QueryParam("att_did_des") String att_did_des, @QueryParam("titolare_flg") String titolare_flg, @QueryParam("resp_ud_flg") String resp_ud_flg, @QueryParam("lezione_flg") String lezione_flg, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getElencoAttivitaDidatticheFisicheConDocentiEPartizioni(@PathParam("aa_off_id") String aa_off_id, @QueryParam("fac_id") String fac_id, @QueryParam("cds_id") String cds_id, @QueryParam("doc_des") String doc_des, @QueryParam("att_did_des") String att_did_des, @QueryParam("titolare_flg") String titolare_flg, @QueryParam("resp_ud_flg") String resp_ud_flg, @QueryParam("lezione_flg") String lezione_flg, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
         inputParameters.put("aa_off_id", aa_off_id);
 
@@ -55,9 +54,10 @@ public class ElencoDelleAttivitaDidatticheFisicheRes {
         }
 
         try {
-            AttivitaDidatticaFisicaCorsoDiStudioList attivitaDidatticaFisicaCorsoDiStudioList = Esse3Interface.elencoDelleAttivitaDidatticheFisiche(inputParameters);
 
-            return Response.ok(JSONDealer.toJSON(attivitaDidatticaFisicaCorsoDiStudioList)).build();
+            AttivitaDidatticaFisicaConDocentiCorsoDiStudioList attivitaDidatticaFisicaConDocentiCorsoDiStudioList = Esse3Interface.elencoDelleAttivitaDidatticheFisicheConDocentiEPartizioni(inputParameters);
+
+            return Response.ok(JSONDealer.toJSON(attivitaDidatticaFisicaConDocentiCorsoDiStudioList)).build();
         } catch (AppException e) {
             e.getCause().printStackTrace();
             throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), e.getCause().getMessage());

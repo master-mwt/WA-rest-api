@@ -285,11 +285,11 @@ public class Esse3Interface {
      * @return TipoDiAttivitaFormaticaRegolamentoDiPercorsoList
      * @throws AppException
      */
-    public static TipoDiAttivitaFormaticaRegolamentoDiPercorsoList regoleDiPercorsoTipiDiAttivitaFormative(Map<String, String> inputParameters) throws AppException {
+    public static TipoDiAttivitaFormativaRegolamentoDiPercorsoList regoleDiPercorsoTipiDiAttivitaFormative(Map<String, String> inputParameters) throws AppException {
         // OP: REGP_TAF
         String opcode = "REGP_TAF";
 
-        return soapToObj(opcode, inputParameters, TipoDiAttivitaFormaticaRegolamentoDiPercorsoList.class);
+        return soapToObj(opcode, inputParameters, TipoDiAttivitaFormativaRegolamentoDiPercorsoList.class);
     }
 
     /**

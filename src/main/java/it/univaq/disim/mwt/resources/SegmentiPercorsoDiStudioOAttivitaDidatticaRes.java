@@ -12,12 +12,12 @@ import javax.ws.rs.core.Response;
 import java.util.HashMap;
 import java.util.Map;
 
-@Path("segmenti_di_un_percorso_di_studio_o_attivita_didattica_offerta")
-public class SegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes {
+@Path("segmenti_percorso_di_studio_o_attivita_didattica")
+public class SegmentiPercorsoDiStudioOAttivitaDidatticaRes {
     @GET
     @Path("aa_off_id/{aa_off_id: ([0-9]+)}/ad_log_id/{ad_log_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes(@PathParam("aa_off_id") String aa_off_id, @PathParam("ad_log_id") String ad_log_id, @QueryParam("ad_id") String ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getSegmentiPercorsoDiStudioOAttivitaDidattica(@PathParam("aa_off_id") String aa_off_id, @PathParam("ad_log_id") String ad_log_id, @QueryParam("ad_id") String ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
         inputParameters.put("aa_off_id", aa_off_id);
         inputParameters.put("ad_log_id", ad_log_id);
@@ -43,7 +43,7 @@ public class SegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes {
     @GET
     @Path("aa_off_id/{aa_off_id: ([0-9]+)}/cds_id/{cds_id: ([0-9]+)}/aa_ord_id/{aa_ord_id: ([0-9]+)}/pds_id/{pds_id: ([0-9]+)}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getSegmentiDiUnPercorsoDiStudioOAttivitaDidatticaOffertaRes(@PathParam("aa_off_id") String aa_off_id, @PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @PathParam("pds_id") String pds_id, @QueryParam("ad_id") String ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+    public Response getSegmentiPercorsoDiStudioOAttivitaDidattica(@PathParam("aa_off_id") String aa_off_id, @PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @PathParam("pds_id") String pds_id, @QueryParam("ad_id") String ad_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
         Map<String, String> inputParameters = new HashMap<String, String>();
         inputParameters.put("aa_off_id", aa_off_id);
         inputParameters.put("cds_id", cds_id);
