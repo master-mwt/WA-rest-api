@@ -2,4 +2,4 @@
 
 web-api-rest-app
 ================
-Description
+A REST interface to the Esse3 SOAP API.
