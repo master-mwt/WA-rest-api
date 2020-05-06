@@ -20,7 +20,7 @@ public class Esse3SoapRequest {
     /**
      * Send request to the Esse3 server
      *
-     * @param opcode Esse3 Request Operation Code
+     * @param opcode          Esse3 Request Operation Code
      * @param inputParameters Esse3 Request parameters
      * @return A String that represents the response of the server
      * @throws AppException
@@ -32,8 +32,8 @@ public class Esse3SoapRequest {
     /**
      * Send request to the Esse3 server
      *
-     * @param urlString The URL of the server
-     * @param opcode Esse3 Request Operation Code
+     * @param urlString       The URL of the server
+     * @param opcode          Esse3 Request Operation Code
      * @param inputParameters Esse3 Request parameters
      * @return A String that represents the response of the server
      * @throws AppException

@@ -1,6 +1,5 @@
 package it.univaq.disim.mwt.exceptions;
 
-// TODO: Exception handling
 public class AppException extends Exception {
     public AppException() {
         super();

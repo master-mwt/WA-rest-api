@@ -18,8 +18,8 @@ public class JAXBDealer {
      * Function that recontruct the model object from XML using JAX-B
      *
      * @param classType Object model class
-     * @param xml XML String
-     * @param <T> Object model class type
+     * @param xml       XML String
+     * @param <T>       Object model class type
      * @return Model object filled from XML
      * @throws AppException
      */
@@ -41,8 +41,8 @@ public class JAXBDealer {
      * Helper function used for unmarshalling XML with JAX-B
      *
      * @param classType Object model class
-     * @param xml XML String
-     * @param <T> Object model class type
+     * @param xml       XML String
+     * @param <T>       Object model class type
      * @return Model object filled from XML
      * @throws JAXBException
      * @throws UnsupportedEncodingException

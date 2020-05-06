@@ -45,13 +45,13 @@ public class XmlDealer {
      * Function that given Esse3 XML Response, it extracts the response content
      * and returns it as a String in the form:
      * <DataSet>
-     *     <Row>
-     *          data
-     *     </Row>
-     *     <Row>
-     *          data
-     *     </Row>
-     *     ...
+     * <Row>
+     * data
+     * </Row>
+     * <Row>
+     * data
+     * </Row>
+     * ...
      * </DataSet>
      *
      * @param xmlResponse Esse3 XML Response
