@@ -21,8 +21,17 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 
+/**
+ * Class that deals with XML parsing
+ */
 public class XmlDealer {
 
+    /**
+     * Function that pretty prints XML on STDOUT
+     *
+     * @param nonFormattedXml An XML String
+     * @throws AppException
+     */
     public static void out(String nonFormattedXml) throws AppException {
         try {
             xmlParser(nonFormattedXml);
@@ -32,6 +41,23 @@ public class XmlDealer {
         }
     }
 
+    /**
+     * Function that given Esse3 XML Response, it extracts the response content
+     * and returns it as a String in the form:
+     * <DataSet>
+     *     <Row>
+     *          data
+     *     </Row>
+     *     <Row>
+     *          data
+     *     </Row>
+     *     ...
+     * </DataSet>
+     *
+     * @param xmlResponse Esse3 XML Response
+     * @return Parsed content of the Esse3 XML Response
+     * @throws AppException
+     */
     public static String getContent(String xmlResponse) throws AppException {
         String xmlString = null;
 
@@ -61,6 +87,14 @@ public class XmlDealer {
         return xmlString;
     }
 
+    /**
+     * Auxiliary function that given the Esse3 XML Response, it extracts the response content from an Esse3 response
+     * and returns it as a Document type
+     *
+     * @param xmlResponse Esse3 XML Response
+     * @return Document with the content of Esse3 XML Response
+     * @throws AppException
+     */
     private static Document getContentDocument(String xmlResponse) throws AppException {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -79,6 +113,15 @@ public class XmlDealer {
         }
     }
 
+    /**
+     * Auxiliary function that extract the response content from an Esse3 response
+     *
+     * @param xmlResponse Esse3 Response XML
+     * @return String contained in ns1:fn_retrieve_xml_pResponse tag
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     private static String getResponseBody(String xmlResponse) throws ParserConfigurationException, SAXException, IOException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -95,6 +138,15 @@ public class XmlDealer {
         return result;
     }
 
+    /**
+     * Auxiliary function that pretty prints XML on STDOUT
+     *
+     * @param nonFormattedXml An XML String
+     * @throws SAXException
+     * @throws IOException
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
     private static void xmlParser(String nonFormattedXml) throws SAXException, IOException, ParserConfigurationException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
