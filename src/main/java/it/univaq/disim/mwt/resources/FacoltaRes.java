@@ -35,7 +35,7 @@ public class FacoltaRes {
 
             FacoltaList facoltaList = Esse3Interface.facolta(inputParameters);
 
-            if(facoltaList.getFacoltaList() == null) {
+            if (facoltaList.getFacoltaList() == null) {
                 // empty response, the server has not found the requested resource
                 return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
             }

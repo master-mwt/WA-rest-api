@@ -30,7 +30,7 @@ public class ClassiRes {
         try {
             ClasseMiurList classeMiurList = Esse3Interface.classi(inputParameters);
 
-            if(classeMiurList.getClasseMiurList() == null) {
+            if (classeMiurList.getClasseMiurList() == null) {
                 // empty response, the server has not found the requested resource
                 return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
             }
