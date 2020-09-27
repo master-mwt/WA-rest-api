@@ -54,6 +54,11 @@ public class CorsiDiStudioRes {
 
             CorsoDiStudioList corsoDiStudioList = Esse3Interface.corsiDiStudio(inputParameters);
 
+            if(corsoDiStudioList.getCorsoDiStudioList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(corsoDiStudioList)).build();
         } catch (AppException e) {
             // e.getCause().printStackTrace();
@@ -102,6 +107,11 @@ public class CorsiDiStudioRes {
         try {
 
             CorsoDiStudioList corsoDiStudioList = Esse3Interface.corsiDiStudio(inputParameters);
+
+            if(corsoDiStudioList.getCorsoDiStudioList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
 
             return Response.ok(JSONDealer.toJSON(corsoDiStudioList)).build();
         } catch (AppException e) {

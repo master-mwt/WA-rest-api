@@ -32,6 +32,11 @@ public class DatiDiDettaglioPercorsoDiStudioRes {
 
             DatiDiDettaglioPercorsoDiStudioList datiDiDettaglioPercorsoDiStudioList = Esse3Interface.datiDiDettaglioDiUnPercorsoDiStudio(inputParameters);
 
+            if(datiDiDettaglioPercorsoDiStudioList.getDatiDiDettaglioPercorsoDiStudioList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(datiDiDettaglioPercorsoDiStudioList)).build();
 
         } catch (AppException e) {

@@ -42,4 +42,18 @@ public class JSONDealer {
 
         return objectNode.toString();
     }
+
+    /**
+     * Function that creates a JSON error message from parameter
+     *
+     * @param error Error string
+     * @return JSON String
+     */
+    public static String errorToJSON(String error) {
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode objectNode = mapper.createObjectNode();
+        objectNode.put("error", error);
+
+        return objectNode.toString();
+    }
 }

@@ -32,6 +32,11 @@ public class PeriodoDidatticoAttivitaDidattichePercorsoDiStudioRes {
         try {
             PeriodoDidatticoAttivitaDidatticaList periodoDidatticoAttivitaDidatticaList = Esse3Interface.periodoDidatticoPerAttivitaDidatticheOfferteInUnPercorsoDiStudio(inputParameters);
 
+            if(periodoDidatticoAttivitaDidatticaList.getPeriodoDidatticoAttivitaDidatticaList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(periodoDidatticoAttivitaDidatticaList)).build();
         } catch (AppException e) {
             // e.getCause().printStackTrace();

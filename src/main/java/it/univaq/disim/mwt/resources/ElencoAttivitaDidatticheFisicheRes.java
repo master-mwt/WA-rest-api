@@ -57,6 +57,11 @@ public class ElencoAttivitaDidatticheFisicheRes {
         try {
             AttivitaDidatticaFisicaCorsoDiStudioList attivitaDidatticaFisicaCorsoDiStudioList = Esse3Interface.elencoDelleAttivitaDidatticheFisiche(inputParameters);
 
+            if(attivitaDidatticaFisicaCorsoDiStudioList.getAttivitaDidatticaFisicaCorsoDiStudioList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(attivitaDidatticaFisicaCorsoDiStudioList)).build();
         } catch (AppException e) {
             // e.getCause().printStackTrace();

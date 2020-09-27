@@ -30,6 +30,11 @@ public class ElencoOrdinamentiCorsoDiStudioRes {
 
             OrdinamentoList ordinamentoList = Esse3Interface.elencoDegliOrdinamentiDiUnCorsoDiStudio(inputParameters);
 
+            if(ordinamentoList.getOrdinamentoList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(ordinamentoList)).build();
 
         } catch (AppException e) {

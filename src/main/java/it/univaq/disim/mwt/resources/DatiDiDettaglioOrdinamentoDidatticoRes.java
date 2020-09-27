@@ -31,6 +31,11 @@ public class DatiDiDettaglioOrdinamentoDidatticoRes {
 
             DatiDiDettaglioOrdinamentoList datiDiDettaglioOrdinamentoList = Esse3Interface.datiDiDettaglioDiUnOrdinamentoDidattico(inputParameters);
 
+            if(datiDiDettaglioOrdinamentoList.getDatiDiDettaglioOrdinamentoList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(datiDiDettaglioOrdinamentoList)).build();
 
         } catch (AppException e) {

@@ -29,6 +29,11 @@ public class DocentiAttivitaDidattichePercorsoDiStudioRes {
 
             DocenteAttivitaDidatticaList docenteAttivitaDidatticaList = Esse3Interface.docentiPerAttivitaDidatticheOfferteInUnPercorsoDiStudio(inputParameters);
 
+            if(docenteAttivitaDidatticaList.getDocenteAttivitaDidatticaList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(docenteAttivitaDidatticaList)).build();
 
         } catch (AppException e) {
@@ -55,6 +60,11 @@ public class DocentiAttivitaDidattichePercorsoDiStudioRes {
         try {
 
             DocenteAttivitaDidatticaList docenteAttivitaDidatticaList = Esse3Interface.docentiPerAttivitaDidatticheOfferteInUnPercorsoDiStudio(inputParameters);
+
+            if(docenteAttivitaDidatticaList.getDocenteAttivitaDidatticaList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
 
             return Response.ok(JSONDealer.toJSON(docenteAttivitaDidatticaList)).build();
 

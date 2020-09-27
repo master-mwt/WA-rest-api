@@ -26,6 +26,11 @@ public class TipiCorsiDiStudioRes {
 
             TipoCorsoDiStudioList tipoCorsoDiStudioList = Esse3Interface.tipiCorsiDiStudio(inputParameters);
 
+            if(tipoCorsoDiStudioList.getTipoCorsoDiStudioList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(tipoCorsoDiStudioList)).build();
 
         } catch (AppException e) {

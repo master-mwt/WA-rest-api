@@ -32,6 +32,11 @@ public class RegoleSceltaAttivitaDidattichePercorsoDiStudioRes {
 
             RegoleDiSceltaAttivitaDidatticaList regoleDiSceltaAttivitaDidatticaList = Esse3Interface.regoleDiSceltaPerAttivitaDidatticheOfferteInUnPercorsoDiStudio(inputParameters);
 
+            if(regoleDiSceltaAttivitaDidatticaList.getRegoleDiSceltaAttivitaDidatticaList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
             return Response.ok(JSONDealer.toJSON(regoleDiSceltaAttivitaDidatticaList)).build();
         } catch (AppException e) {
             // e.getCause().printStackTrace();
