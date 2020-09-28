@@ -307,6 +307,20 @@ public class Esse3Interface {
     }
 
     /**
+     * REGP_SET operation
+     *
+     * @param inputParameters Esse3 Request parameters
+     * @return SettoriScientificoDisciplinariRegolamentoDiPercorsoList
+     * @throws AppException
+     */
+    public static SettoriScientificoDisciplinariRegolamentoDiPercorsoList regoleDiPercorsoSettoriScientificoDisciplinari(Map<String, String> inputParameters) throws AppException {
+        // OP: REGP_SET
+        String opcode = "REGP_SET";
+
+        return soapToObj(opcode, inputParameters, SettoriScientificoDisciplinariRegolamentoDiPercorsoList.class);
+    }
+
+    /**
      * LISTA_AD_FISICHE operation
      *
      * @param inputParameters Esse3 Request parameters

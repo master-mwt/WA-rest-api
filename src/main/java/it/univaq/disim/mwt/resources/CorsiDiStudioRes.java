@@ -539,6 +539,39 @@ public class CorsiDiStudioRes {
     }
 
     @GET
+    @Path("{cds_id: ([0-9]+)}/ordinamenti/{aa_ord_id: ([0-9]+)}/percorsi_di_studio/{pds_id: ([0-9]+)}/regolamenti_di_percorso/{aa_reg_id: ([0-9]+)}/codici_professori/{prof_cod: ([0-9]+)}/ambiti_disciplinari/{amb_id: ([0-9]+)}/tipi_attivita_formative/{taf_cod: ([a-zA-Z]+)}/settori_scientifico_disciplinari")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getRegoleDiPercorsoSettoriScientificoDisciplinari(@PathParam("cds_id") String cds_id, @PathParam("aa_ord_id") String aa_ord_id, @PathParam("pds_id") String pds_id, @PathParam("prof_cod") String prof_cod, @PathParam("aa_reg_id") String aa_reg_id, @PathParam("taf_cod") String taf_cod, @PathParam("amb_id") String amb_id, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
+        Map<String, String> inputParameters = new HashMap<String, String>();
+        inputParameters.put("cds_id", cds_id);
+        inputParameters.put("aa_ord_id", aa_ord_id);
+        inputParameters.put("pds_id", pds_id);
+        inputParameters.put("prof_cod", prof_cod);
+        inputParameters.put("aa_reg_id", aa_reg_id);
+        inputParameters.put("amb_id", amb_id);
+        inputParameters.put("taf_cod", taf_cod);
+
+        if (lingua_iso6392_cod != null) {
+            inputParameters.put("lingua_iso6392_cod", lingua_iso6392_cod);
+        }
+
+        try {
+
+            SettoriScientificoDisciplinariRegolamentoDiPercorsoList settoriScientificoDisciplinariRegolamentoDiPercorsoList = Esse3Interface.regoleDiPercorsoSettoriScientificoDisciplinari(inputParameters);
+
+            if (settoriScientificoDisciplinariRegolamentoDiPercorsoList.getSettoriScientificoDisciplinariRegolamentoDiPercorsoList() == null) {
+                // empty response, the server has not found the requested resource
+                return Response.status(Response.Status.NOT_FOUND).entity(JSONDealer.errorToJSON("The server has not found your request")).build();
+            }
+
+            return Response.ok(JSONDealer.toJSON(settoriScientificoDisciplinariRegolamentoDiPercorsoList)).build();
+        } catch (AppException e) {
+            // e.getCause().printStackTrace();
+            throw new RestWebApplicationException(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), JSONDealer.errorToJSON(e));
+        }
+    }
+
+    @GET
     @Path("ordinamenti/percorsi_di_studio/offerta/{aa_off_id: ([0-9]+)}/attivita_didattiche_fisiche")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getElencoAttivitaDidatticheFisiche(@PathParam("aa_off_id") String aa_off_id, @QueryParam("fac_id") String fac_id, @QueryParam("cds_id") String cds_id, @QueryParam("doc_des") String doc_des, @QueryParam("att_did_des") String att_did_des, @QueryParam("titolare_flg") String titolare_flg, @QueryParam("resp_ud_flg") String resp_ud_flg, @QueryParam("lezione_flg") String lezione_flg, @QueryParam("lingua_iso6392_cod") String lingua_iso6392_cod) {
